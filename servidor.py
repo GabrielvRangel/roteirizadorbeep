@@ -24,4 +24,4 @@ def roteirizar():
         return render_template("mapa.html")
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run()
