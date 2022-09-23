@@ -1,9 +1,5 @@
 from sqlite3 import Timestamp
-from telnetlib import theNULL
-import pandas as pd
-import psycopg2 as pg
-from sqlalchemy import Time, create_engine
-import googlemaps
+
 
 class Roteirização:
     def __init__(self,data, hub, produto, HrFinal):
