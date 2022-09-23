@@ -6,6 +6,9 @@ from sqlalchemy import Time, create_engine
 import googlemaps
 import json
 import datetime
+import folium
+from branca.element import Figure
+
 
 class Roteirização:
     def __init__(self,data, hub, produto, HrFinal):
