@@ -51,10 +51,14 @@ class Roteirização:
         d7 = QuantCapacidade.iloc[4]['Quantidade'] #Puxando a quantidade de técnicas d7 ( diarista 7 - 13 )
 
         usuario = os.environ['usuario']
-
+        senha = os.environ['senha']
+        server = os.environ['server']
+        banco = os.environ['banco'] 
+        conexão = os.environ['conexão']
+        
         # ------------------------ CONECTANDO AO BANCO DE DADOS ---------------------- #
         # Declara a variavel engine conectando ao banco de dados da beep usando servidor, usuario, senha e nome do banco
-        engine = create_engine(usuario)
+        engine = create_engine(f"""postgresql://{usuario}:{senha}@{server}/{banco}""")
 
         #realizando consulta sql ( esse código dentro das """ código """ é uma consulta sql igual fazemos no metabase )
         sql = f"""
