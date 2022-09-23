@@ -6,10 +6,10 @@ from sqlalchemy import Time, create_engine
 import googlemaps
 import json
 import datetime
-#import folium
+import folium
 #from branca.element import Figure
-#from folium.plugins import MarkerCluster
-#import folium.plugins as plugins
+from folium.plugins import MarkerCluster
+import folium.plugins as plugins
 import os
 
 class Roteirização:
