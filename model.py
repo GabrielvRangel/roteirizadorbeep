@@ -53,8 +53,7 @@ class Roteirização:
         usuario = os.environ['usuario']
         senha = os.environ['senha']
         server = os.environ['server']
-        banco = os.environ['banco'] 
-        conexão = os.environ['conexão']
+        banco = os.environ['banco']
         
         # ------------------------ CONECTANDO AO BANCO DE DADOS ---------------------- #
         # Declara a variavel engine conectando ao banco de dados da beep usando servidor, usuario, senha e nome do banco
