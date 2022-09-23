@@ -8,7 +8,7 @@ import json
 import datetime
 #import folium
 from branca.element import Figure
-from folium.plugins import MarkerCluster
+#from folium.plugins import MarkerCluster
 #import folium.plugins as plugins
 import os
 
