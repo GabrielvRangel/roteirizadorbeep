@@ -9,7 +9,7 @@ import datetime
 #import folium
 from branca.element import Figure
 from folium.plugins import MarkerCluster
-import folium.plugins as plugins
+#import folium.plugins as plugins
 import os
 
 class Roteirização:
