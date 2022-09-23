@@ -54,7 +54,10 @@ class Roteirização:
         senha = os.environ['senha']
         server = os.environ['server']
         banco = os.environ['banco'] 
-
+        print(usuario)
+        print(senha)
+        print(server)
+        print(banco)
         # ------------------------ CONECTANDO AO BANCO DE DADOS ---------------------- #
         # Declara a variavel engine conectando ao banco de dados da beep usando servidor, usuario, senha e nome do banco
         engine = create_engine(f"""postgresql://{usuario}:{senha}@{server}/{banco}""")
