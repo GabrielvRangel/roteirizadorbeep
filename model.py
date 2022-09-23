@@ -52,7 +52,6 @@ class Roteirização:
 
         #colocando a consulta sql em uma tabela pandas
 
-        road = pd.read_sql_query(sql, con=engine) #Pegamos a consulta que fizemos e a conexão com servidor e jogamos dentro de uma tabela usando o pandas e chamamos essa tabela de road
         road['voucher'] = road['voucher'].astype(str).str.replace('[','0').str.replace(']','0').str.replace(',','0').str.replace(' ','0') #Substituindo o array de vouchers por número 0 para ficar em formato numerico
 
         #Colocando os endereços do hub em uma tabela
