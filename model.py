@@ -1,4 +1,13 @@
 
+import googlemaps
+import json
+import datetime
+import folium
+from branca.element import Figure
+from folium.plugins import MarkerCluster
+import folium.plugins as plugins
+import os
+
 class Roteirização:
     def __init__(self,data, hub, produto, HrFinal):
         self.data = data
