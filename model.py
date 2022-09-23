@@ -7,7 +7,6 @@ import googlemaps
 import json
 import datetime
 import folium
-from branca.element import Figure
 
 
 class Roteirização:
