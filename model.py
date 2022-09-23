@@ -54,10 +54,10 @@ class Roteirização:
         senha = os.environ['senha']
         server = os.environ['server']
         banco = os.environ['banco'] 
+        conexão = os.environ['conexão']
 
         # ------------------------ CONECTANDO AO BANCO DE DADOS ---------------------- #
         # Declara a variavel engine conectando ao banco de dados da beep usando servidor, usuario, senha e nome do banco
-        conexão = f"""postgresql://{usuario}:{senha}@{server}/{banco}"""        
         engine = create_engine(conexão)
 
         #realizando consulta sql ( esse código dentro das """ código """ é uma consulta sql igual fazemos no metabase )
@@ -74,7 +74,7 @@ class Roteirização:
 
         road = pd.read_sql_query(sql, con=engine) #Pegamos a consulta que fizemos e a conexão com servidor e jogamos dentro de uma tabela usando o pandas e chamamos essa tabela de road
         road['voucher'] = road['voucher'].astype(str).str.replace('[','0').str.replace(']','0').str.replace(',','0').str.replace(' ','0') #Substituindo o array de vouchers por número 0 para ficar em formato numerico
-        print(road)
+
         #Colocando os endereços do hub em uma tabela
         HubEndereço = pd.read_excel("dados/Endereço HUB.xlsx", sheet_name= 'Planilha1',engine='openpyxl')
         FiltroHubEndereço = HubEndereço[HubEndereço['HUB'] == self.hub] 
