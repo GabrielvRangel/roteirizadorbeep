@@ -1,5 +1,6 @@
 from sqlite3 import Timestamp
-
+from telnetlib import theNULL
+import pandas as pd
 
 class Roteirização:
     def __init__(self,data, hub, produto, HrFinal):
