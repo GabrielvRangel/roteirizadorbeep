@@ -1,6 +1,6 @@
 import model
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_file
 
 app = Flask(__name__)
 @app.route("/")
@@ -19,7 +19,9 @@ def roteirizar():
         return render_template("index.html", error=mensagem)
     else: 
         Sessão.Roteirizar()
-        return render_template("mapa.html")
+        download = "Road.xlsx"
+        return send_file(download, as_attachment=True)
+        
 
 if __name__ == "__main__":
     app.run()
