@@ -29,14 +29,18 @@ def roteirizar():
         return render_template("index.html", error=mensagem)
     else: 
         Sessão.Roteirizar()
-        file = request.files['file']
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            new_filename = f'{filename.split(".")[0]}_{str(datetime.now())}.csv'
-            save_location = os.path.join('input', new_filename)
-            file.save(save_location)
-            output_file = model.file_name(save_location)
-        return render_template("mapa.html"), send_from_directory('output', output_file)
+        return render_template("mapa.html"), download()
+
+def download():
+    file = request.files['file']
+    if file and allowed_file(file.filename):
+        filename = secure_filename(file.filename)
+        new_filename = f'{filename.split(".")[0]}_{str(datetime.now())}.csv'
+        save_location = os.path.join('input', new_filename)
+        file.save(save_location)
+        output_file = model.file_name(save_location)
+        return send_from_directory('output', output_file)
+
 
 if __name__ == "__main__":
     app.run()
