@@ -25,7 +25,6 @@ if __name__ == "__main__":
 
 class Mapa:
     def Baixar():
-        print(model.Roteirização.Roteirizar.file_name)
         #Enviando para o mapa
         render_template("mapa.html")
         #Enviando o arquivo roteirizado para download
