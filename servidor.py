@@ -19,13 +19,12 @@ def roteirizar():
         return render_template("index.html", error=mensagem)
     else: 
         Sessão.Roteirizar() 
+        return render_template("mapa.html")
 
 if __name__ == "__main__":
     app.run()
 
 class Mapa:
     def Baixar():
-        #Enviando para o mapa
-        render_template("mapa.html")
         #Enviando o arquivo roteirizado para download
         send_file("Road.xlsx", as_attachment=True)
