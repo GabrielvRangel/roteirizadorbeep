@@ -1,7 +1,6 @@
 import model
 import os
 from flask import Flask, render_template, request
-from model import road 
 
 app = Flask(__name__)
 @app.route("/")
@@ -20,8 +19,8 @@ def roteirizar():
         return render_template("index.html", error=mensagem)
     else: 
         Sessão.Roteirizar()
-        return print(road)
-
+        print(model.road)
+        return render_template("mapa.html")
 
 if __name__ == "__main__":
     app.run()
