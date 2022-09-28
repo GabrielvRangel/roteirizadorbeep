@@ -18,9 +18,13 @@ def roteirizar():
         mensagem = 'Favor preencher todos os campos corretamente!'
         return render_template("index.html", error=mensagem)
     else: 
-        Sessão.Roteirizar() 
-        download = "Road.xlsx"
-        return render_template("mapa.html") and send_file(download, as_attachment=True)
+        Sessão.Roteirizar()      
+        return render_template("mapa.html") 
+
+@app.route("/download")
+def download():
+    download = "Road.xlsx"
+    return send_file(download, as_attachment=True) 
 
 if __name__ == "__main__":
     app.run()
