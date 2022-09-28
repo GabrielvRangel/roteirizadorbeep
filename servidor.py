@@ -27,7 +27,7 @@ def roteirizar():
     if not data or not hub or not produto or not tempo:
         mensagem = 'Favor preencher todos os campos corretamente!'
         return render_template("index.html", error=mensagem)
-    else:
+    else: 
         Sessão.Roteirizar()
         file = request.files['file']
         if file and allowed_file(file.filename):
