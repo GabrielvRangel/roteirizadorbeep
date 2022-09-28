@@ -10,13 +10,6 @@ upload_folder = os.path.join(os.getcwd(), 'upload')
 def index():
     return render_template("index.html")
 
-@app.route("/upload", methods=["POST"])
-def upload():
-    file = request.files['planilha']
-    savePath = os.path.join(upload_folder, secure_filename(file.filename))
-    file.save(savePath)
-    return 'feito!'
-
 @app.route("/roteirizar",methods=["GET","POST"])
 def roteirizar():
     data = request.args.get('data')
@@ -33,3 +26,10 @@ def roteirizar():
 
 if __name__ == "__main__":
     app.run()
+
+@app.route("/upload", methods=["POST"])
+def upload():
+    file = request.files['planilha']
+    savePath = os.path.join(upload_folder, secure_filename(file.filename))
+    file.save(savePath)
+    return 'feito!'
