@@ -11,6 +11,7 @@ from branca.element import Figure
 from folium.plugins import MarkerCluster
 import folium.plugins as plugins
 import os
+import servidor
 
 class Roteirização:
     def __init__(self,data, hub, produto, HrFinal):
@@ -275,3 +276,5 @@ class Roteirização:
         # saving the excel
         road.to_excel(file_name)
         print('Salvamos o arquivo em formato excel roteirizado na sua pasta!')
+
+        servidor.download()

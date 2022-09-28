@@ -29,7 +29,7 @@ def roteirizar():
         return render_template("index.html", error=mensagem)
     else: 
         Sessão.Roteirizar()
-        return render_template("mapa.html"), download()
+        return render_template("mapa.html")
 
 def download():
     file = request.files['file']
