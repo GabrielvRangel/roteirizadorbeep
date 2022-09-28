@@ -19,8 +19,7 @@ def roteirizar():
         return render_template("index.html", error=mensagem)
     else: 
         Sessão.Roteirizar() 
-        return render_template("mapa.html")
-    return send_file("Road.xlsx", as_attachment=True)
+        return render_template("mapa.html", file=send_file("Road.xlsx", as_attachment=True))
 
 if __name__ == "__main__":
     app.run()
