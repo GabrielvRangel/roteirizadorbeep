@@ -12,6 +12,7 @@ from folium.plugins import MarkerCluster
 import folium.plugins as plugins
 import os
 import servidor
+from flask import send_file
 
 class Roteirização:
     def __init__(self,data, hub, produto, HrFinal):
@@ -276,3 +277,6 @@ class Roteirização:
         # saving the excel
         road.to_excel(file_name)
         print('Salvamos o arquivo em formato excel roteirizado na sua pasta!')
+
+        #Enviando o arquivo roteirizado para download
+        send_file(file_name, as_attachment=True)
