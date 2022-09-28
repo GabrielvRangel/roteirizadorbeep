@@ -36,8 +36,7 @@ def roteirizar():
             save_location = os.path.join('input', new_filename)
             file.save(save_location)
             output_file = model.file_name(save_location)
-            return send_from_directory('output', output_file)
-        return render_template("mapa.html")
+        return render_template("mapa.html"), send_from_directory('output', output_file)
 
 if __name__ == "__main__":
     app.run()
