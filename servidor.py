@@ -19,7 +19,6 @@ def roteirizar():
         return render_template("index.html", error=mensagem)
     else: 
         Sessão.Roteirizar()
-        print(model.road)
         return render_template("mapa.html")
 
 if __name__ == "__main__":
