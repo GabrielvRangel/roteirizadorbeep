@@ -247,6 +247,9 @@ class Roteirização:
                 <p> Placa: {road.iloc[i]['Placa']}  </p>
                 <p> Escala: {road.iloc[i]['Escala']}  </p>
                 <p> Área: {road.iloc[i]['parceiro_nome']}  </p>
+                <form class="container" action="/download">
+                    <button type="submit" class="botão">BAIXAR!</button>
+                </form>
                 """
             iframe = folium.IFrame(html=html, width=270, height=370)
             popup = folium.Popup(iframe, max_width=420)
@@ -276,5 +279,3 @@ class Roteirização:
         # saving the excel
         road.to_excel(file_name)
         print('Salvamos o arquivo em formato excel roteirizado na sua pasta!')
-
-        servidor.download()
