@@ -33,10 +33,14 @@ def roteirizar():
 
 def download():
     file = request.files['file']
+    print(file)
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
+        print(filename)
         new_filename = f'{filename.split(".")[0]}_{str(datetime.now())}.csv'
+        print(new_filename)
         save_location = os.path.join('input', new_filename)
+        print(save_location)
         file.save(save_location)
         output_file = model.file_name(save_location)
         return send_from_directory('output', output_file)

@@ -277,4 +277,4 @@ class Roteirização:
         road.to_excel(file_name)
         print('Salvamos o arquivo em formato excel roteirizado na sua pasta!')
 
-        
+        servidor.download()
