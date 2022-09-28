@@ -30,12 +30,12 @@ def roteirizar():
     else:
         Sessão.Roteirizar()
         file = request.files['file']
-        if file and allowed_file(file.filename)
+        if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
             new_filename = f'{filename.split(".")[0]}_{str(datetime.now())}.csv'
             save_location = os.path.join('input', new_filename)
             file.save(save_location)
-            output_file = filename(save_location)
+            output_file = model.file_name(save_location)
             return send_from_directory('output', output_file)
         return render_template("mapa.html")
 
