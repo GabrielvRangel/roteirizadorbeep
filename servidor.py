@@ -19,7 +19,7 @@ def roteirizar():
         return render_template("index.html", error=mensagem)
     else: 
         Sessão.Roteirizar()
-        return baixar() 
+        return baixar
 
 def baixar():
     download = "Road.xlsx"
