@@ -26,10 +26,3 @@ def roteirizar():
 
 if __name__ == "__main__":
     app.run()
-
-@app.route("/upload", methods=["POST"])
-def upload():
-    file = request.files['planilha']
-    savePath = os.path.join(upload_folder, secure_filename(file.filename))
-    file.save(savePath)
-    return 'feito!'
