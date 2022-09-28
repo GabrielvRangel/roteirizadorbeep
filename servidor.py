@@ -19,7 +19,7 @@ def roteirizar():
         return render_template("index.html", error=mensagem)
     else: 
         Sessão.Roteirizar()
-        return render_template("mapa.html")
+        return model.road
 
 
 if __name__ == "__main__":
