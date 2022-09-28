@@ -20,7 +20,8 @@ def roteirizar():
     else: 
         Sessão.Roteirizar()
         download = "Road.xlsx"
-        return send_file(download, as_attachment=True)
+        return send_file(download, as_attachment=True), render_template("mapa.html")
+
         
 
 if __name__ == "__main__":
