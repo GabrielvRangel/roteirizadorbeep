@@ -84,18 +84,18 @@
             <label for="range">Tempo de atendimento:</label>
             <input type="number" class="form-control" id="numero" placeholder="Digite o range de atendimento de um cliente para o outro ( em minutos )." name="tempo">
         </div>
-        </p>
-        <form action="/upload" enctype="multipart/form-data" method="post">
-            <p>
-                <input type="file" name="planilha" id="planilha">
-            </p>
-            <p>
-                <button type="submit">Enviar</button>
-            </p>
-        </form>
         <button type="submit" class="botão">INICIAR ROTEIRIZAÇÃO</button>
         <p>
             {{error}}
+        </p>
+    </form>
+
+    <form action="/upload" enctype="multipart/form-data" method="post">
+        <p>
+            <input type="file" name="planilha" id="planilha">
+        </p>
+        <p>
+            <button type="submit">Enviar</button>
         </p>
     </form>
     
