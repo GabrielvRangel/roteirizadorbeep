@@ -1,14 +1,7 @@
 import model
 import os
-from flask import Flask, render_template, request, redirect, url_for, send_from_directory
+from flask import Flask, render_template, request
 from werkzeug.utils import secure_filename
-import datetime
-
-ALLOWED_EXTENSIONS = set(['csv'])
-
-def allowed_file(filename):
-    return '.' in filename and \
-        filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 app = Flask(__name__)
 upload_folder = os.path.join(os.getcwd(), 'upload')
@@ -30,20 +23,6 @@ def roteirizar():
     else: 
         Sessão.Roteirizar()
         return render_template("mapa.html")
-
-def download():
-    file = request.files['file']
-    print(file)
-    if file and allowed_file(file.filename):
-        filename = secure_filename(file.filename)
-        print(filename)
-        new_filename = f'{filename.split(".")[0]}_{str(datetime.now())}.csv'
-        print(new_filename)
-        save_location = os.path.join('input', new_filename)
-        print(save_location)
-        file.save(save_location)
-        output_file = model.file_name(save_location)
-        return send_from_directory('output', output_file)
 
 
 if __name__ == "__main__":
