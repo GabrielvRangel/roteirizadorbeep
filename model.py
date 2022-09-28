@@ -276,7 +276,3 @@ class Roteirização:
         # saving the excel
         road.to_excel(file_name)
         print('Salvamos o arquivo em formato excel roteirizado na sua pasta!')
-
-        servidor.Mapa.Baixar()
-        
-       
