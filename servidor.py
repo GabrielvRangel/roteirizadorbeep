@@ -16,7 +16,7 @@ def upload():
     file = request.files['planilha']
     savePath = os.path.join(upload_folder, secure_filename(file.filename))
     file.save(savePath)
-    return 'feito com sucesso'
+    return 'feito!'
 
 @app.route("/roteirizar",methods=["GET","POST"])
 def roteirizar():
