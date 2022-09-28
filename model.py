@@ -12,7 +12,6 @@ from folium.plugins import MarkerCluster
 import folium.plugins as plugins
 import os
 import servidor
-from flask import Flask, render_template, request, send_file
 
 class Roteirização:
     def __init__(self,data, hub, produto, HrFinal):
@@ -278,8 +277,6 @@ class Roteirização:
         road.to_excel(file_name)
         print('Salvamos o arquivo em formato excel roteirizado na sua pasta!')
 
-        #Enviando para o mapa
-        render_template("mapa.html")
-
-        #Enviando o arquivo roteirizado para download
-        send_file(file_name, as_attachment=True)
+        servidor.Mapa.Baixar()
+        
+       

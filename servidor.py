@@ -22,3 +22,11 @@ def roteirizar():
 
 if __name__ == "__main__":
     app.run()
+
+class Mapa:
+    def Baixar():
+        print(model.file_name)
+        #Enviando para o mapa
+        render_template("mapa.html")
+        #Enviando o arquivo roteirizado para download
+        send_file("Road.xlsx", as_attachment=True)
