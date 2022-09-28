@@ -21,7 +21,7 @@ def roteirizar():
         Sessão.Roteirizar()      
         return render_template("mapa.html") 
 
-@app.route("/download")
+@app.route("/download",methods=["GET","POST"])
 def download():
     download = "Road.xlsx"
     return send_file(download, as_attachment=True) 
