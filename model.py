@@ -247,9 +247,7 @@ class Roteirização:
                 <p> Placa: {road.iloc[i]['Placa']}  </p>
                 <p> Escala: {road.iloc[i]['Escala']}  </p>
                 <p> Área: {road.iloc[i]['parceiro_nome']}  </p>
-                <a href="/download">
-                    <input type="button" value="BAIXAR">
-                </a>
+                <a href="https://beep-roteirizador.herokuapp.com/download" target="_blank">DOWNLOAD PLANILHA</a>
                 """
             iframe = folium.IFrame(html=html, width=270, height=370)
             popup = folium.Popup(iframe, max_width=420)
