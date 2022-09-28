@@ -16,7 +16,7 @@ class Roteirização:
     def __init__(self,data, hub, produto, HrFinal):
         self.data = data
         self.hub = hub
-        self.produto = produto
+        self.produto = produto 
         self.HrFinal = HrFinal
 
     def Roteirizar(self):
